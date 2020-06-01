@@ -1,0 +1,14 @@
+{
+  "name": "jun-rc-antd",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xwjune@163.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xwjune/rc-antd.git"
+  },
+  "license": "ISC"
+}
