@@ -18,7 +18,7 @@ describe('ImgView', () => {
     expect(wrapper.render()).toMatchSnapshot();
   });
 
-  test('全屏预览', () => {
+  test('fullscreen', () => {
     const wrapper = mount(Component);
     expect(wrapper.state('visible')).toBeFalsy();
 

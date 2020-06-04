@@ -103,7 +103,7 @@ class ImgView extends React.PureComponent {
           <img
             src={this.props.src}
             alt="图片"
-            className="jun-img-view"
+            className="jun-antd-imgview"
             style={{ transform }}
           />
         </Modal>
