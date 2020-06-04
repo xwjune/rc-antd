@@ -77,10 +77,10 @@ class SearchForm extends React.PureComponent {
     return data.map((item) => {
       const Component = components[item.type];
       if (item.render && typeof item.render === 'function') {
-        return <React.Fragment key={item.key}>{item.render()}</React.Fragment>;
+        return <React.Fragment key={item.name}>{item.render()}</React.Fragment>;
       }
       if (Component) {
-        return <Component key={item.key} {...item} />;
+        return <Component key={item.name} {...item} />;
       }
       return null;
     });
