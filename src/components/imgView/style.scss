@@ -1,0 +1,10 @@
+@import '../../style/variables';
+
+$imgview-prefix-cls: '#{$cls-prefix}-img-view';
+
+.#{$imgview-prefix-cls} {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  transition: all 0.2s ease;
+}

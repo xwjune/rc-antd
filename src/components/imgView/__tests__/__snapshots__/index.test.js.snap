@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImgView render correctly 1`] = `
+<span>
+  <span
+    role="button"
+    tabindex="-1"
+  >
+    <img
+      alt="图片"
+      src="pic.png"
+      style="width:80px;height:80px"
+    />
+  </span>
+</span>
+`;
