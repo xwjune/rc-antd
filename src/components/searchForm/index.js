@@ -21,6 +21,8 @@ const components = {
 
 class SearchForm extends React.PureComponent {
   static propTypes = {
+    style: PropTypes.object,
+    className: PropTypes.string,
     formRef: PropTypes.object.isRequired,
     onSearch: PropTypes.func.isRequired,
     onReset: PropTypes.func.isRequired,
@@ -44,6 +46,8 @@ class SearchForm extends React.PureComponent {
   };
 
   static defaultProps = {
+    style: {},
+    className: '',
     list: [], // 选择项
     multiple: false, // 是否为多功能搜索
     collapsed: true, // 高级搜索是否收起
@@ -100,6 +104,8 @@ class SearchForm extends React.PureComponent {
 
   render() {
     const {
+      style,
+      className,
       list,
       multiple,
       size,
@@ -123,7 +129,8 @@ class SearchForm extends React.PureComponent {
 
     return (
       <Form
-        className="app-searchForm"
+        className={className}
+        style={style}
         layout="inline"
         ref={this.props.formRef}
         initialValues={initialValues}

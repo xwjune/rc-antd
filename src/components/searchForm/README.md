@@ -7,6 +7,7 @@
 
 | Property | Description | Type | Default |
 | :------- | :---------- | :--- | :------ |
+| className | 样式类 | string  | - |
 | formRef | 表单实体 | object | - |
 | onSearch | 查询回调 | function(values) | - |
 | onReset | 重置回调 | function | - |

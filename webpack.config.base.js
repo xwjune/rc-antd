@@ -16,6 +16,12 @@ const reactDOMExternal = {
   commonjs: 'react-dom',
   amd: 'react-dom',
 };
+const antdExternal = {
+  root: 'antd',
+  commonjs2: 'antd',
+  commonjs: 'antd',
+  amd: 'antd',
+};
 
 module.exports = {
   entry: {
@@ -38,6 +44,7 @@ module.exports = {
   externals: {
     react: reactExternal,
     'react-dom': reactDOMExternal,
+    antd: antdExternal,
   },
   plugins: [
     new webpack.BannerPlugin(`${pkg.name} v${pkg.version}\n\nCopyright ${pkg.author}, Inc.\nAll rights reserved.`),
