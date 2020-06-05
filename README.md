@@ -81,3 +81,26 @@ Script:
 | Property | Description | Type | Default |
 | :------- | :---------- | :--- | :------ |
 | src | 图片资源 | string |
+
+### SearchForm
+**搜索表单**
+
+| Property | Description | Type | Default |
+| :------- | :---------- | :--- | :------ |
+| formRef | 表单实体 | object | - |
+| onSearch | 查询回调 | function(values) | - |
+| onReset | 重置回调 | function | - |
+| list | 选择项 | array | - |
+| multiple | 是否为高级搜索 | boolean | false |
+| collapsed | 高级搜索是否收起 | boolean | true |
+| size | 简易搜索个数 | number | 3 |
+| loading | 是否正在查询 | boolean | - |
+| initialValues | 初始值 | object | - |
+| onExport | 导出回调 | function | - |
+| extra | 搜索栏额外元素【操作按钮】 | string \| ReactNode | - |
+| onCollapse | 展开/收起回调 | function(collapsed) | - |
+| searchText | 查询按钮文字 | string | 查询 |
+| resetText | 重置按钮文字 | string | 重置 |
+| exportText | 导出按钮文字 | string | 导出 |
+| collapseText | 收起状态按钮文字 | string | 展开 |
+| uncollapseText | 展开状态按钮文字 | string | 收起 |

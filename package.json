@@ -1,6 +1,6 @@
 {
   "name": "jun-rc-antd",
-  "version": "1.0.1",
+  "version": "0.0.2",
   "description": "Ant Design of React",
   "main": "index.js",
   "scripts": {
@@ -37,6 +37,11 @@
     "dist",
     "index.js"
   ],
+  "engines": {
+    "node": ">=8.0.0",
+    "react": ">=16.3.0",
+    "antd": ">=4.0.0"
+  },
   "dependencies": {
     "antd": "^4.1.0",
     "classnames": "^2.2.6",
