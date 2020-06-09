@@ -7,7 +7,7 @@
 | name | 字段名 | string | - |
 | label | 标签文本 | string | - |
 | list | 选择项 | object[] | - |
-| onSearch | 文本框值变化时回调| function(value: string) | - |
+| onSearch | 文本框值变化时回调| function(value: string) | noop |
 | loading | 加载中状态| boolean | - |
 | placeholder | 描述文字 | string | 请输入 |
 | width | 宽度 | string \| number | 100% |

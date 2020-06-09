@@ -17,7 +17,11 @@ const App = ({
   width,
 }) => (
   <Form.Item label={label} name={name}>
-    <DatePicker.RangePicker format={format} style={{ width }} />
+    <DatePicker.RangePicker
+      getPopupContainer={triggerNode => triggerNode.parentElement}
+      format={format}
+      style={{ width }}
+    />
   </Form.Item>
 );
 

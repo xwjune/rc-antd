@@ -11,6 +11,8 @@ import ItemSelect from './ItemSelect';
 import ItemSearch from './ItemSearch';
 import ItemDate from './ItemDate';
 
+function noop() {}
+
 const components = {
   input: ItemInput, // 输入框
   rangeInput: ItemRangeInput, // 区间输入框
@@ -23,9 +25,9 @@ class SearchForm extends React.PureComponent {
   static propTypes = {
     style: PropTypes.object,
     className: PropTypes.string,
-    formRef: PropTypes.object.isRequired,
-    onSearch: PropTypes.func.isRequired,
-    onReset: PropTypes.func.isRequired,
+    formRef: PropTypes.object,
+    onSearch: PropTypes.func,
+    onReset: PropTypes.func,
     list: PropTypes.array,
     multiple: PropTypes.bool,
     collapsed: PropTypes.bool,
@@ -53,6 +55,8 @@ class SearchForm extends React.PureComponent {
     collapsed: true, // 高级搜索是否收起
     size: 3, // 简易搜索个数
     extra: null, // 搜索栏额外元素【操作按钮】
+    onExport: noop,
+    onCollapse: noop,
     searchText: '查询', // 查询按钮文字
     resetText: '重置', // 重置按钮文字
     exportText: '导出', // 导出按钮文字
@@ -70,9 +74,7 @@ class SearchForm extends React.PureComponent {
     this.setState((prevState) => ({
       collapsed: !prevState.collapsed,
     }), () => {
-      if (onCollapse) {
-        onCollapse(this.state.collapsed);
-      }
+      onCollapse(this.state.collapsed);
     });
   };
 
@@ -84,7 +86,11 @@ class SearchForm extends React.PureComponent {
         return <React.Fragment key={item.name}>{item.render()}</React.Fragment>;
       }
       if (Component) {
-        return <Component key={item.name} {...item} />;
+        let key = item.name;
+        if (item.type === 'rangeInput') {
+          key = `${item.leftName}${item.rightName}`;
+        }
+        return <Component key={key} {...item} />;
       }
       return null;
     });
@@ -137,11 +143,12 @@ class SearchForm extends React.PureComponent {
         onFinish={onSearch}
       >
         {this.listRender()}
-        <Form.Item>
+        <Form.Item aria-label="action">
           <Button
             type="primary"
             htmlType="submit"
             disabled={loading}
+            aria-label="search"
           >
             {searchText}
           </Button>
@@ -149,6 +156,7 @@ class SearchForm extends React.PureComponent {
             style={{ marginLeft: 8 }}
             disabled={loading}
             onClick={onReset}
+            aria-label="reset"
           >
             {resetText}
           </Button>
@@ -158,6 +166,7 @@ class SearchForm extends React.PureComponent {
                 style={{ marginLeft: 8 }}
                 disabled={loading}
                 onClick={onExport}
+                aria-label="export"
               >
                 {exportText}
               </Button>

@@ -15,6 +15,8 @@ import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
 import { Form, Select, Spin } from 'antd';
 
+function noop() {}
+
 const App = ({
   name,
   label,
@@ -26,7 +28,7 @@ const App = ({
   ...restProps
 }) => {
   const otherProps = {};
-  if (onSearch && typeof onSearch === 'function') {
+  if (typeof onSearch === 'function') {
     Object.assign(otherProps, {
       onSearch: debounce(onSearch, 500),
     });
@@ -60,6 +62,7 @@ App.defaultProps = {
   list: [],
   placeholder: '请输入',
   width: '100%',
+  onSearch: noop,
 };
 
 App.propTypes = {

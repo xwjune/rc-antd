@@ -17,9 +17,9 @@
 | size | 简易搜索个数 | number | 3 |
 | loading | 是否正在查询 | boolean | - |
 | initialValues | 初始值 | object | - |
-| onExport | 导出回调 | function | - |
+| onExport | 导出回调 | function | noop |
 | extra | 搜索栏额外元素【操作按钮】 | string \| ReactNode | - |
-| onCollapse | 展开/收起回调 | function(collapsed) | - |
+| onCollapse | 展开/收起回调 | function(collapsed) | noop |
 | searchText | 查询按钮文字 | string | 查询 |
 | resetText | 重置按钮文字 | string | 重置 |
 | exportText | 导出按钮文字 | string | 导出 |
@@ -71,7 +71,7 @@ class App extends React.Component {
       list: [{
         value: 'male',
         text: '男',
-      }{
+      }, {
         value: 'female',
         text: '女',
       }],

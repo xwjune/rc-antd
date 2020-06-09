@@ -61,7 +61,7 @@ class App extends React.Component {
       list: [{
         value: 'male',
         text: '男',
-      }{
+      }, {
         value: 'female',
         text: '女',
       }],
