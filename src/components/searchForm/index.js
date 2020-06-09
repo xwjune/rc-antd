@@ -55,7 +55,6 @@ class SearchForm extends React.PureComponent {
     collapsed: true, // 高级搜索是否收起
     size: 3, // 简易搜索个数
     extra: null, // 搜索栏额外元素【操作按钮】
-    onExport: noop,
     onCollapse: noop,
     searchText: '查询', // 查询按钮文字
     resetText: '重置', // 重置按钮文字

@@ -68,6 +68,7 @@ describe('SearchForm', () => {
         style={{ padding: 10 }}
       />
     );
+    expect(wrapper.find('button[aria-label="export"]').exists()).toBeFalsy();
     expect(wrapper.hasClass('myAction')).toBeTruthy();
     expect(wrapper.getDOMNode().getAttribute('style')).toBe('padding: 10px;');
     wrapper.unmount();

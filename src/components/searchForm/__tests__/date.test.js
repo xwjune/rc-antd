@@ -68,7 +68,10 @@ describe('SearchForm', () => {
       .find('input')
       .at(0)
       .simulate('blur');
-    wrapper.find('form').simulate('submit');
+    wrapper
+      .find('form')
+      .simulate('submit');
+    await delay();
     const v1 = wrapper
       .find('input')
       .at(0)
@@ -77,7 +80,6 @@ describe('SearchForm', () => {
       .find('input')
       .at(1)
       .getDOMNode().value;
-    await delay();
     const result = wrapper.state('result');
     expect(result.birthday[0].format('YYYY-MM-DD')).toEqual(v1);
     expect(result.birthday[1].format('YYYY-MM-DD')).toEqual(v2);
