@@ -80,13 +80,14 @@ Script:
 
 | Property | Description | Type | Default |
 | :------- | :---------- | :--- | :------ |
-| src | 图片资源 | string |
+| src | 图片资源 | string | - |
 
 ### SearchForm
 **搜索表单**
 
 | Property | Description | Type | Default |
 | :------- | :---------- | :--- | :------ |
+| className | 样式类 | string  | - |
 | formRef | 表单实体 | object | - |
 | onSearch | 查询回调 | function(values) | - |
 | onReset | 重置回调 | function | - |
@@ -98,7 +99,7 @@ Script:
 | initialValues | 初始值 | object | - |
 | onExport | 导出回调 | function | - |
 | extra | 搜索栏额外元素【操作按钮】 | string \| ReactNode | - |
-| onCollapse | 展开/收起回调 | function(collapsed) | - |
+| onCollapse | 展开 \| 收起回调 | function(collapsed) | noop |
 | searchText | 查询按钮文字 | string | 查询 |
 | resetText | 重置按钮文字 | string | 重置 |
 | exportText | 导出按钮文字 | string | 导出 |
