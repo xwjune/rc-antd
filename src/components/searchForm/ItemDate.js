@@ -9,6 +9,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Form, DatePicker } from 'antd';
+import zhCN from 'antd/lib/date-picker/locale/zh_CN';
 
 const App = ({
   name,
@@ -19,6 +20,7 @@ const App = ({
   <Form.Item label={label} name={name}>
     <DatePicker.RangePicker
       getPopupContainer={triggerNode => triggerNode.parentElement}
+      locale={zhCN}
       format={format}
       style={{ width }}
     />
